@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitLife Subscription Plans</title>
+    <!-- Bug 1: Wrong Bootstrap version link (Check Bootstrap Docs for the latest) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+    <!-- Bug 2: Navbar class 'navbar-dark' used on light background (Check Navbar color options) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-light">
+        <div class="container">
+            <a class="navbar-brand text-white" href="#">FitLife Subscriptions</a>
+        </div>v
+    </nav>
+
+    <div class="container mt-5">
+        <!-- Bug 3: Heading not centered on all screen sizes (Check Bootstrap typography utilities) -->
+        <h2 class="text-success">Choose Your Fitness Plan</h2>
+
+        <!-- Bug 4: Incorrect grid structure - row-cols should have a default and responsive breakpoints -->
+        <div class="row row-cols-3 g-4 mt-4">  
+            <div class="col">
+                <!-- Bug 5: Shadow class incorrectly named (Check Bootstrap utility classes) -->
+                <div class="card h-100 text-center shadow-lg-sm">
+                    <div class="card-body">
+                        <h3 class="card-title">Basic Plan</h3>
+                        <!-- Bug 6: Bootstrap class 'fw-bold' is incorrect for text weight -->
+                        <p class="card-text fs-4 font-weight-bold">$10/month</p>
+                          <!-- Bug 7: 'list-unstyled' class missing, causing bullets to appear -->
+                        <ul>
+                            <li>Access to gym</li>
+                            <li>1 personal training session</li>
+                            <li>Standard fitness equipment</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer bg-transparent border-0">
+                       <!-- Bug 8: Button missing Bootstrap styling -->
+                        <button class="btn btn-success w-100">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 text-center shadow">
+                    <div class="card-body">
+                        <h3 class="card-title">Standard Plan</h3>
+                        <p class="card-text fs-4 fw-bold">$20/month</p>
+                        <ul>
+                            <li>All Basic Plan features</li>
+                            <li>3 personal training sessions</li>
+                            <li>Access to group classes</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer bg-transparent border-0">
+                        <button class="btn btn-success w-100">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <h3 class="card-title">Premium Plan</h3>
+                        <p class="card-text fs-4 fw-bold">$30/month</p>
+                        <ul class="list-unstyled">
+                            <li>All Standard Plan features</li>
+                            <li>Unlimited training sessions</li>
+                            <li>Diet and nutrition consultation</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <button>Subscribe</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+              <div class="card h-100 text-center">
+                  <div class="card-body">
+                      <h3 class="card-title">Premium Plan</h3>
+                      <p class="card-text fs-4 fw-bold">$30/month</p>
+                      <ul class="list-unstyled">
+                          <li>All Standard Plan features</li>
+                          <li>Unlimited training sessions</li>
+                          <li>Diet and nutrition consultation</li>
+                      </ul>
+                  </div>
+                  <div class="card-footer">
+                      <button>Subscribe</button>
+                  </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card h-100 text-center">
+                  <div class="card-body">
+                      <h3 class="card-title">Premium Plan</h3>
+                      <p class="card-text fs-4 fw-bold">$30/month</p>
+                      <ul class="list-unstyled">
+                          <li>All Standard Plan features</li>
+                          <li>Unlimited training sessions</li>
+                          <li>Diet and nutrition consultation</li>
+                      </ul>
+                  </div>
+                  <div class="card-footer">
+                      <button>Subscribe</button>
+                  </div>
+              </div>
+            </div>
+
+          <div class="col">
+            <div class="card h-100 text-center">
+                <div class="card-body">
+                    <h3 class="card-title">Premium Plan</h3>
+                    <p class="card-text fs-4 fw-bold">$30/month</p>
+                    <ul class="list-unstyled">
+                        <li>All Standard Plan features</li>
+                        <li>Unlimited training sessions</li>
+                        <li>Diet and nutrition consultation</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- Bug 9: Script link missing integrity attribute (Check Bootstrap Docs for security best practices) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Bug 10: Footer class is missing (Check Bootstrap footer component) -->
+    <footer>
+        <p class="text-center">© 2025 FitLife</p>
+    </footer>
+
+</body>
+</html>
