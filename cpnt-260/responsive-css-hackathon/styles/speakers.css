@@ -1,0 +1,33 @@
+.speakers h2 {
+}
+
+.speakers-grid {
+}
+
+.speaker-card {
+}
+
+.speaker-card img {
+}
+
+.speaker-card h3,
+.speaker-card p {
+}
+
+/* this is for tablet - this will have 2 columns*/
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .speakers-grid {
+  }
+}
+
+/* this is for phone - this will have 1 column  */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .speakers-grid {
+  }
+}
+
+/* this is for dekstop - this will have 4 columns */
+@media (min-width: 1200px) {
+  .speakers-grid {
+  }
+}

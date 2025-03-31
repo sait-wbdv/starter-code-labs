@@ -1,0 +1,35 @@
+footer {
+}
+
+.footer-content {
+}
+
+.social-media {
+}
+
+.social-media img {
+}
+
+/* Tablet View */
+@media (max-width: 768px) {
+  .footer-content {
+  }
+
+  .social-media {
+  }
+
+  .social-media img {
+  }
+}
+
+/* Mobile View */
+@media (max-width: 480px) {
+  .footer-content {
+  }
+
+  .social-media {
+  }
+
+  .social-media img {
+  }
+}

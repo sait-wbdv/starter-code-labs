@@ -1,0 +1,37 @@
+.heading {
+}
+
+.logo {
+}
+
+.nav {
+}
+
+.nav-list {
+}
+
+.nav-list-mobile {
+}
+
+.fa-regular {
+}
+
+.nav-item {
+}
+
+.nav-item a {
+}
+
+a:hover {
+}
+
+a:visited {
+}
+
+@media screen and (min-width: 768px) {
+  .nav-list {
+  }
+
+  .nav-list-mobile {
+  }
+}
