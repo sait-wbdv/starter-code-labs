@@ -1,67 +1,44 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const num1Input = document.getElementById("num1");
-  const num2Input = document.getElementById("num2");
-  const operatorSelect = document.getElementById("operator");
-  const calculateBtn = document.getElementById("calculate");
-  const resultDisplay = document.getElementById("result");
+// script.js with bugs
+document.getElementById('calc-form').addEventListener('click', function (e) {
+  e.preventDefault();
 
-  // Display last result if available
-  const lastCalc = localStorage.getItem("lastCalculation");
-  if (lastCalc) {
-    try {
-      const parsed = JSON.parse(lastCalc);
-      resultDisplay.innerText = `Previous: ${parsed.res}`;
-    } catch (e) {
-      console.error("Error parsing stored calculation:", e);
-    }
+  let num1 = document.getElementById('num1').value;
+  let num2 = document.getElementById('num2').value;
+  let operator = document.getElementById('operator').value;
+
+
+  if (!num1 || !num2) {
+    alert("Please enter both numbers");
   }
 
-  calculateBtn.addEventListener("click", () => {
-    const num1 = parseFloat(num1Input.value);
-    const num2 = parseFloat(num2Input.value);
-    const operator = operatorSelect.value;
+  num1 = num1;
+  num2 = num2;
 
-    // Validate inputs
-    if (isNaN(num1) || isNaN(num2)) {
-      resultDisplay.innerText = "Please enter valid numbers!";
-      return;
-    }
-
-    let result;
-
+  let result;
+  try {
     switch (operator) {
-      case "+":
+      case 'add':
         result = num1 + num2;
         break;
-      case "-":
+      case 'subtract':
         result = num1 - num2;
         break;
-      case "*":
+      case 'multiply':
         result = num1 * num2;
         break;
-      case "/":
-        if (num2 === 0) {
-          resultDisplay.innerText = "Cannot divide by zero!";
-          return;
-        }
+      case 'divide':
+        if (num2 == 0) throw "Cannot divide by zero!";
         result = num1 / num2;
         break;
-      default:
-        resultDisplay.innerText = "Invalid operator selected.";
-        return;
     }
+  } catch (err) {
+    result = err;
+  }
 
-    // Display result
-    resultDisplay.innerText = `Result: ${result}`;
+  document.getElementById('result').innerText = result;
 
-    // Save to localStorage
-    const calcData = {
-      a: num1,
-      b: num2,
-      op: operator,
-      res: result,
-    };
+  localStorage.setItem('calc', result.toString);
 
-    localStorage.setItem("lastCalculation", JSON.stringify(calcData));
-  });
+  document.cookie = "theme=dark;";
+
 });
