@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacts</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans text-gray-800">
+
+  <!-- Header Section -->
+  <div class="container mx-auto my-4">
+    <h2 class="text-2xl font-bold text-center">Welcome, <%= username %>!</h2>
+
+    <% if (message && message.length > 0) { %>
+      <p class="text-green-500 text-center mt-2"><%= message %></p>
+    <% } %>
+  </div>
+
+  <!-- Add Contact Form -->
+  <div class="container mx-auto my-4 bg-white p-6 rounded-lg shadow-md">
+    <h3 class="text-xl font-semibold mb-4">Add New Contact</h3>
+    <form method="POST" action="/contacts" class="space-y-4">
+      <input type="text" name="name" placeholder="Name" required class="w-full p-2 border border-gray-300 rounded-md" />
+      <input type="email" name="email" placeholder="Email" required class="w-full p-2 border border-gray-300 rounded-md" />
+      <input type="text" name="phone" placeholder="Phone" required class="w-full p-2 border border-gray-300 rounded-md" />
+      <button type="submit" class="w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition">Add Contact</button>
+    </form>
+  </div>
+
+  <!-- Contacts List -->
+  <div class="container mx-auto my-4">
+    <h3 class="text-xl font-semibold mb-4">Your Contacts</h3>
+    <% contacts.forEach(contact => { %>
+      <div class="bg-white p-6 mb-4 rounded-lg shadow-md">
+        <p><strong>Name:</strong> <%= contact.name %></p>
+        <p><strong>Email:</strong> <%= contact.email %></p>
+        <p><strong>Phone:</strong> <%= contact.phone %></p>
+
+        <!-- Update Contact Form -->
+        <form method="POST" action="/contacts/<%= contact.id %>/edit" class="mt-4 space-y-4">
+          <input type="text" name="name" value="<%= contact.name %>" class="w-full p-2 border border-gray-300 rounded-md" />
+          <input type="email" name="email" value="<%= contact.email %>" class="w-full p-2 border border-gray-300 rounded-md" />
+          <input type="text" name="phone" value="<%= contact.phone %>" class="w-full p-2 border border-gray-300 rounded-md" />
+          <button type="submit" class="w-full py-2 bg-yellow-500 text-white rounded-md hover:bg-yellow-600 transition">Update</button>
+        </form>
+
+        <!-- Delete Contact Form -->
+        <form method="POST" action="/contacts/<%= contact.id %>/delete" class="mt-2">
+          <button type="submit" class="w-full py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition">Delete</button>
+        </form>
+      </div>
+    <% }) %>
+  </div>
+
+  <!-- Logout Form -->
+  <div class="container mx-auto my-4">
+    <form method="POST" action="/logout" class="text-center">
+      <button type="submit" class="w-full py-2 bg-gray-700 text-white rounded-md hover:bg-gray-800 transition">Logout</button>
+    </form>
+  </div>
+
+</body>
+</html>
+
+
+
